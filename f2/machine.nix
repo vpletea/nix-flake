@@ -19,10 +19,10 @@ in
   # Networking settings
   networking.hostName = "${nixos-hostname}"; # Define your hostname.
   networking.firewall.enable = false; # Disable the firewall altogether
-  networking.useDHCP = false;
-  networking.interfaces.enp0s21f0u5.ipv4.addresses = [{ address = "192.168.1.201"; prefixLength = 24; }];
-  networking.defaultGateway = "192.168.1.1";
-  networking.nameservers = [ "192.168.1.1" ];
+#  networking.useDHCP = false;
+#  networking.interfaces.enp0s21f0u5.ipv4.addresses = [{ address = "192.168.1.201"; prefixLength = 24; }];
+#  networking.defaultGateway = "192.168.1.1";
+#  networking.nameservers = [ "192.168.1.1" ];
 
   nixpkgs.config.allowUnfree = true; # Allow unfree software
   security.sudo.wheelNeedsPassword = false; # Passwordless sudo for wheel group
