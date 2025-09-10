@@ -7,15 +7,11 @@
 
   outputs = inputs @ { nixpkgs, ...}:
 
-  let
-    nixos-username = "valentin";
-    nixos-hostname = "nixos";
-  in
 
   {
     nixosConfigurations."hp" = nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
-    specialArgs = { inherit inputs nixos-username nixos-hostname; };
+    specialArgs = { inherit inputs; };
     modules = [
       ./hp/host.nix
       ];
