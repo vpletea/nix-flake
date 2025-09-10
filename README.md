@@ -59,5 +59,6 @@ passwd user
 
 ### Original install instructions: https://github.com/MatthiasBenaets/nix-config/tree/master
 ## To do:
+  - Modularize the configuration
   - Use disko for partitioning
   - Add sops-nix for secrets management
