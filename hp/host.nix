@@ -1,10 +1,12 @@
 {
   pkgs,
-  nixos-username,
-  nixos-hostname,
   ...
 }:
 
+  let
+    nixos-username = "valentin";
+    nixos-hostname = "hp";
+  in
 {
   imports = [
     /etc/nixos/hardware-configuration.nix
