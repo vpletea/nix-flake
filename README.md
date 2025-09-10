@@ -14,7 +14,7 @@
   ```
 - Install the flake:
   ```
-  sudo nixos-rebuild switch --impure --flake .#nixos
+  sudo nixos-rebuild switch --impure --flake .#hp
 - To update the flake run the following command:
   ```
   nix flake update
