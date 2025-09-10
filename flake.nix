@@ -13,11 +13,11 @@
   in
 
   {
-    nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
+    nixosConfigurations."hp" = nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     specialArgs = { inherit inputs nixos-username nixos-hostname; };
     modules = [
-      ./host.nix
+      ./hp/host.nix
       ];
     };
   };
