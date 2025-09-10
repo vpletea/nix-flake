@@ -1,5 +1,7 @@
 { config, nixos-username, ...}:
 let
+  nixos-username = "valentin";
+  nixos-hostname = "f2";
   domain = builtins.readFile /home/${nixos-username}/secrets/domain;
   cloudflareEmail = builtins.readFile /home/${nixos-username}/secrets/cloudflare_email;
   cloudflareToken = builtins.readFile /home/${nixos-username}/secrets/cloudflare_token;
