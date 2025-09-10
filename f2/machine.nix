@@ -14,7 +14,9 @@ in
   boot.loader.timeout = 1; # Use the space key at boot for generations menu
   boot.plymouth.enable = true;
   boot.initrd.systemd.enable = true;
+  boot.initrd.systemd.tpm2.enable = false;
   boot.kernelParams = ["quiet"];
+
 
   # Networking settings
   networking.hostName = "${nixos-hostname}"; # Define your hostname.
