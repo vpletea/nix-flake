@@ -62,3 +62,4 @@ passwd user
   - Modularize the configuration
   - Use disko for partitioning
   - Add sops-nix for secrets management
+  - Add k3s cluster setup
