@@ -18,7 +18,7 @@ run github:nix-community/disko/latest -- \
 - Cd into the flake dir
 - Install Nixos:
   ```
-  sudo nixos-install --flake .#hp
+  sudo nixos-install --flake .#hp --no-root-passwd
   ```
 ### Finalization
   - Set a root password after installation is done
@@ -26,7 +26,7 @@ run github:nix-community/disko/latest -- \
 ### Dotfiles setup
 - Run chezmoi init:
   ```
-  chezmoi init https://github.com/vpletea/dotfiles.git
+  chezmoi init https://github.com/vpletea/dotfiles.git 
   ```
 - Apply the configuration:
   ```
