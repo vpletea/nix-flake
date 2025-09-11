@@ -7,19 +7,12 @@
 
 # Nixos Installation from flake
 ### Partitioning
-- Partition Labels:
-  - Boot = "boot"
-  - Home = "nixos"
-- Partition Size:
-  - Boot = 512MiB
-  - Home = Rest
+- Clone the repository and cd
+- Partition the disk using disko:
 ```
-parted /dev/sda -- mklabel gpt
-parted /dev/sda -- mkpart primary 512MiB -8GiB
-parted /dev/sda -- mkpart ESP fat32 1MiB 512MiB
-parted /dev/sda -- set 2 esp
-mkfs.ext4 -L nixos /dev/sda1
-mkfs.fat -F 32 -n boot /dev/sda2
+sudo nix --experimental-features "nix-command flakes" \
+run github:nix-community/disko/latest -- \
+--mode destroy,format,mount ./disko.nix
 ```
 ### Installation
 - Mount the partitions:

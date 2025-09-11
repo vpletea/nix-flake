@@ -9,7 +9,8 @@
   in
 {
   imports = [
-    /etc/nixos/hardware-configuration.nix
+    ./disko.nix
+    ./hardware.nix
   ];
 
   # Bootloader setup
