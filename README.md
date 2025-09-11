@@ -6,8 +6,9 @@
 - F4 - Terramaster F4-223 4-Bay NAS
 
 # Nixos Installation from flake
+
 ### Partitioning
-- Clone the repository and cd into your machine dir
+- Clone the repository and cd to your machine directory
 - Partition the disk using disko:
 ```
 sudo nix --experimental-features "nix-command flakes" \
@@ -15,7 +16,7 @@ run github:nix-community/disko/latest -- \
 --mode destroy,format,mount ./disko.nix
 ```
 ### Installation
-- Cd into the flake dir
+- Go to the flake root directory
 - Install Nixos:
   ```
   sudo nixos-install --flake .#hp --no-root-passwd
@@ -32,7 +33,7 @@ run github:nix-community/disko/latest -- \
   chezmoi apply
   ```
 
-## To do:
+# To do:
   - Add k3s cluster setup
   - Modularize the configuration
   - Add sops-nix for secrets management
