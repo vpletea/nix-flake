@@ -92,11 +92,6 @@
     nautilus # File manager
     loupe # Image viewer
   ];
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    nil
-    nixd
-  ];
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
