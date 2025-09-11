@@ -21,8 +21,10 @@ run github:nix-community/disko/latest -- \
   ```
   sudo nixos-install --flake .#hp --no-root-passwd
   ```
+
 ### Finalization
   - Reboot without liveCD
+
 ### Dotfiles setup
 - Run chezmoi init:
   ```
@@ -32,6 +34,16 @@ run github:nix-community/disko/latest -- \
   ```
   chezmoi apply
   ```
+
+### Useful flake commands:
+- Apply the flake after Nixos installation:
+```
+sudo nixos-rebuild switch --impure --flake .#hp
+```
+- Update the flake:
+```
+nix flake update
+```
 
 # To do:
   - Add k3s cluster setup
