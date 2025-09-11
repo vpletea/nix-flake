@@ -49,7 +49,7 @@
   users.users."${nixos-username}" = {
     isNormalUser = true;
     description = nixos-username;
-    hashedPassword = "$6$seLEniqqrgXAzeBd$hLXnQhD9681W2tuxRheAy2pC37cALUNt.4KyNmhiTT.4WPFxBvnEhrRpd4jKf/bwtwsVU4HFtnp.9TqZYbEJv."
+    hashedPassword = "$6$seLEniqqrgXAzeBd$hLXnQhD9681W2tuxRheAy2pC37cALUNt.4KyNmhiTT.4WPFxBvnEhrRpd4jKf/bwtwsVU4HFtnp.9TqZYbEJv.";
     extraGroups = [
       "networkmanager"
       "wheel"

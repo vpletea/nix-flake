@@ -18,7 +18,7 @@ run github:nix-community/disko/latest -- \
 - Cd into the flake dir
 - Install Nixos:
   ```
-  sudo nixos-install --flake #hp
+  sudo nixos-install --flake .#hp
   ```
 ### Finalization
   - Set a root password after installation is done
