@@ -7,7 +7,7 @@
 
 # Nixos Installation from flake
 ### Partitioning
-- Clone the repository and cd
+- Clone the repository and cd into your machine dir
 - Partition the disk using disko:
 ```
 sudo nix --experimental-features "nix-command flakes" \
@@ -15,31 +15,14 @@ run github:nix-community/disko/latest -- \
 --mode destroy,format,mount ./disko.nix
 ```
 ### Installation
-- Mount the partitions:
-  ```
-  mount /dev/disk/by-label/nixos /mnt
-  mkdir -p /mnt/boot
-  mount /dev/disk/by-label/boot /mnt/boot
-  ```
-- Generate the configuration:
-  ```
-  nixos-generate-config --root /mnt
-  ```
+- Cd into the flake dir
 - Install Nixos:
   ```
-  nixos-install --flake https://github.com/vpletea/nix-flake.git#hp --impure
-  nixos-install --flake https://github.com/vpletea/nix-flake.git#f2 --impure
-  nixos-install --flake https://github.com/vpletea/nix-flake.git#f4 --impure
+  sudo nixos-install --flake #hp
   ```
 ### Finalization
   - Set a root password after installation is done
   - Reboot without liveCD
-  - If initial password is not set use TTY via "Ctrl - Alt - F1" to login as root the use "passwd"
-```
-passwd user
-```
-  - Go back to the graphical interface by using "Ctrl - Alt - F7" then login as user
-
 ### Dotfiles setup
 - Run chezmoi init:
   ```
