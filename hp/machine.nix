@@ -55,7 +55,9 @@
       "wheel"
     ];
   };
-
+  # Set root password
+  users.root.hashedPassword = "$6$seLEniqqrgXAzeBd$hLXnQhD9681W2tuxRheAy2pC37cALUNt.4KyNmhiTT.4WPFxBvnEhrRpd4jKf/bwtwsVU4HFtnp.9TqZYbEJv.";
+  
   # Packages installed system wide
   environment.systemPackages = with pkgs; [
     # System pkgs
