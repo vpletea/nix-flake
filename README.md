@@ -21,7 +21,6 @@ run github:nix-community/disko/latest -- \
   sudo nixos-install --flake .#hp --no-root-passwd
   ```
 ### Finalization
-  - Set a root password after installation is done
   - Reboot without liveCD
 ### Dotfiles setup
 - Run chezmoi init:
@@ -33,9 +32,8 @@ run github:nix-community/disko/latest -- \
   chezmoi apply
   ```
 
-### Original install instructions: https://github.com/MatthiasBenaets/nix-config/tree/master
 ## To do:
-  - Modularize the configuration
-  - Use disko for partitioning
-  - Add sops-nix for secrets management
   - Add k3s cluster setup
+  - Modularize the configuration
+  - Add sops-nix for secrets management
+
