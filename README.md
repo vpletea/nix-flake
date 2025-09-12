@@ -55,6 +55,7 @@ nix flake update
 ```
 
 # To do:
+  - Get rid of the dd mirroring for EFI
   - Add k3s cluster setup
   - Modularize the configuration
   - Add sops-nix for secrets management
