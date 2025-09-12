@@ -20,6 +20,7 @@ run github:nix-community/disko/latest -- \
 - Install Nixos:
   ```
   sudo nixos-install --flake .#hp --no-root-passwd
+  sudo nixos-install --flake .#f2 --no-root-passwd
   ```
 
 ### Finalization

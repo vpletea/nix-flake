@@ -25,7 +25,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./machines/terra-f2/machine.nix
-          ./machines/terra-f2/services.nix
+          # ./machines/terra-f2/services.nix
           inputs.disko.nixosModules.disko
         ];
       };
