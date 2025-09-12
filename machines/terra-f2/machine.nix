@@ -38,11 +38,15 @@ in
       "wheel"
       "docker"
     ];
+    hashedPassword = "$6$seLEniqqrgXAzeBd$hLXnQhD9681W2tuxRheAy2pC37cALUNt.4KyNmhiTT.4WPFxBvnEhrRpd4jKf/bwtwsVU4HFtnp.9TqZYbEJv.";
     openssh.authorizedKeys.keys = [
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAILQwflbQ5CDJhaGSigNSrq0CmZbL82cdtBY2nylJAM9ZAAAAEXNzaDpZdWJpa2V5LVVTQi1D valentin@terra-nix"
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIB8RMwwUKZuPhLydiLtB/KWuKAkGF2VStrm+DDUPy+1dAAAAEXNzaDpZdWJpS2V5LVVTQi1B valentin@terra-nix"
     ];
   };
+
+  # Set root password
+  users.users.root.hashedPassword = "$6$seLEniqqrgXAzeBd$hLXnQhD9681W2tuxRheAy2pC37cALUNt.4KyNmhiTT.4WPFxBvnEhrRpd4jKf/bwtwsVU4HFtnp.9TqZYbEJv.";
 
   # Timezone and locale settings
   time.timeZone = "Europe/Bucharest"; # Set your time zone.
