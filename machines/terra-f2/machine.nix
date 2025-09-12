@@ -10,37 +10,18 @@ in
   ];
 
   # Bootloader setup
-  boot = {
-    loader.grub = {
-      enable = true;
-      efiSupport = true;
-      zfsSupport = true;
-      mirroredBoots = [
-        {
-          devices = [ "nodev" ];
-          path = "/boot";
-        }
-        {
-          devices = [ "nodev" ];
-          path = "/boot-fallback";
-        }
-      ];
-    };
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.timeout = 1; # Use the space key at boot for generations menu
   boot.plymouth.enable = true;
-
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = true;
-  # boot.loader.timeout = 1; # Use the space key at boot for generations menu
-  # boot.plymouth.enable = true;
-  # boot.initrd.systemd.enable = true;
-  # boot.initrd.systemd.tpm2.enable = false;
-  # boot.kernelParams = [ "quiet" ];
-  # boot.supportedFilesystems = [ "zfs" ];
+  boot.initrd.systemd.enable = true;
+  boot.initrd.systemd.tpm2.enable = false;
+  boot.kernelParams = [ "quiet" ];
+  boot.supportedFilesystems = [ "zfs" ];
   boot.zfs.forceImportRoot = true;
   networking.hostId = "dceadcbf";
   fileSystems."/boot".options = [ "nofail" ];
-  fileSystems."/boot2".options = [ "nofail" ];
+  fileSystems."/boot-fallback".options = [ "nofail" ];
 
   # Networking settings
   networking.hostName = "${nixos-hostname}"; # Define your hostname.
