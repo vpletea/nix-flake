@@ -26,6 +26,7 @@
         modules = [
           ./machines/terra-f2/machine.nix
           ./machines/terra-f2/services.nix
+          inputs.disko.nixosModules.disko
         ];
       };
       nixosConfigurations."f4" = nixpkgs.lib.nixosSystem {
