@@ -19,7 +19,7 @@ in
   boot.kernelParams = [ "quiet" ];
   boot.supportedFilesystems = [ "zfs" ];
   boot.zfs.forceImportRoot = true;
-  networking.hostId = "dceadcbf";
+  networking.hostId = "dceadcbf"; # Generate one using "head -c4 /dev/urandom | od -A none -t x4"
   fileSystems."/boot".options = [ "nofail" ];
   fileSystems."/boot-fallback".options = [ "nofail" ];
 
