@@ -1,65 +1,71 @@
-let
-  mdDisk =
-    { device, idx }:
-    {
-      type = "disk";
-      device = "/dev/${device}";
-      content = {
-        type = "gpt";
-        partitions = {
-          # boot partition
-          ESP = {
-            type = "EF00";
-            size = "500M";
-            content = {
-              type = "filesystem";
-              format = "vfat";
-              mountpoint = if idx == 0 then "/boot" else "/boot2";
-              mountOptions = [ "umask=0077" ];
-            };
-          };
-          # root partition
-          mdadm = {
-            size = "100%";
-            content = {
-              type = "mdraid";
-              name = "raid1";
-            };
-          };
-        };
-      };
-    };
-in
 {
-
   disko.devices = {
     disk = {
-      disk1 = mdDisk {
-        device = "sda";
-        idx = 0;
-      };
-      disk2 = mdDisk {
-        device = "sdb";
-        idx = 1;
-      };
-    };
-    mdadm = {
-      raid1 = {
-        type = "mdadm";
-        level = 1;
+      sda = {
+        type = "disk";
+        device = "/dev/sda";
         content = {
           type = "gpt";
-          partitions.primary = {
-            size = "100%";
-            content = {
-              type = "filesystem";
-              format = "ext4";
-              mountpoint = "/";
+          partitions = {
+            ESP = {
+              size = "1G";
+              type = "EF00";
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+                mountOptions = [ "umask=0077" ];
+              };
+            };
+            zfs = {
+              size = "100%";
+              content = {
+                type = "zfs";
+                pool = "zroot";
+              };
             };
           };
         };
+      };
+      sdb = {
+        type = "disk";
+        device = "/dev/sdb";
+        content = {
+          type = "gpt";
+          partitions = {
+            ESP = {
+              size = "1G";
+              type = "EF00";
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+                mountOptions = [ "umask=0077" ];
+              };
+            };
+            zfs = {
+              size = "100%";
+              content = {
+                type = "zfs";
+                pool = "zroot";
+              };
+            };
+          };
+        };
+      };
+    };
+    zpool = {
+      zroot = {
+        type = "zpool";
+        mode = "mirror";
+        options.cachefile = "none";
+        rootFsOptions = {
+          compression = "zstd";
+          "com.sun:auto-snapshot" = "false";
+        };
+        mountpoint = "/";
+        postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank";
       };
     };
   };
-
 }

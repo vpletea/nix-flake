@@ -6,7 +6,6 @@
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
-
   };
 
   outputs =
@@ -25,8 +24,8 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./f2/machine.nix
-          ./f2/services.nix
+          ./machines/terra-f2/machine.nix
+          ./machines/terra-f2/services.nix
         ];
       };
       nixosConfigurations."f4" = nixpkgs.lib.nixosSystem {
