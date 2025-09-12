@@ -21,10 +21,12 @@ run github:nix-community/disko/latest -- \
   ```
   sudo nixos-install --flake .#hp --no-root-passwd
 
-```
+  ```
 - Terramaster specific steps:
-```
+  ```
   sudo nixos-install --flake .#f2 --no-root-passwd
+  ```
+  ```
   sudo dd if=/dev/sda1 of=/dev/sdb1 status=progress bs=1M
   ```
 
