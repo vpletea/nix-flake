@@ -18,6 +18,7 @@ in
   boot.initrd.systemd.tpm2.enable = false;
   boot.kernelParams = [ "quiet" ];
   boot.supportedFilesystems = [ "zfs" ];
+  networking.hostId = "dceadcbf";
 
   # Networking settings
   networking.hostName = "${nixos-hostname}"; # Define your hostname.
