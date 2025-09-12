@@ -20,7 +20,12 @@ run github:nix-community/disko/latest -- \
 - Install Nixos:
   ```
   sudo nixos-install --flake .#hp --no-root-passwd
+
+```
+- Terramaster specific steps:
+```
   sudo nixos-install --flake .#f2 --no-root-passwd
+  sudo dd if=/dev/sda1 of=/dev/sdb1 status=progress bs=1M
   ```
 
 ### Finalization
@@ -29,7 +34,7 @@ run github:nix-community/disko/latest -- \
 ### Dotfiles setup
 - Run chezmoi init:
   ```
-  chezmoi init https://github.com/vpletea/dotfiles.git 
+  chezmoi init https://github.com/vpletea/dotfiles.git
   ```
 - Apply the configuration:
   ```
@@ -50,4 +55,3 @@ nix flake update
   - Add k3s cluster setup
   - Modularize the configuration
   - Add sops-nix for secrets management
-

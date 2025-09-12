@@ -39,7 +39,7 @@
               content = {
                 type = "filesystem";
                 format = "vfat";
-                mountpoint = "/boot";
+                mountpoint = "/boot2";
                 mountOptions = [ "umask=0077" ];
               };
             };
