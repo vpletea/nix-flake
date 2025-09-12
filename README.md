@@ -16,6 +16,7 @@ run github:nix-community/disko/latest -- \
 --mode destroy,format,mount ./disko.nix
 ```
 ### Installation
+- Boot from liveCD and select the LTS kernel ( for better stability and zfs support)
 - Go to the flake root directory
 - Install Nixos on HP Probook:
   ```
