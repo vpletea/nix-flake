@@ -17,12 +17,12 @@ run github:nix-community/disko/latest -- \
 ```
 ### Installation
 - Go to the flake root directory
-- Install Nixos:
+- Install Nixos on HP Probook:
   ```
   sudo nixos-install --flake .#hp --no-root-passwd
 
   ```
-- Terramaster specific steps:
+- Install Nixos on Terramaster F2-221:
   ```
   sudo nixos-install --flake .#f2 --no-root-passwd
   ```
